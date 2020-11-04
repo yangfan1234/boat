@@ -1,0 +1,46 @@
+spring:
+  application:
+    # 应用名称
+    name: boat-so
+  profiles:
+    active: @profile.active@
+  cloud:
+    nacos:
+      discovery:
+        # nacos注册中心-腾信云
+        server-addr: 150.158.152.127:8848
+      config:
+        # nacos配置中心-腾信云
+        server-addr: 150.158.152.127:8848
+        file-extension: yml
+    # sentinel监控--腾信云
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        # 本地客户端ip
+        #client-ip: 192.168.31.228
+
+# 设置日志级别
+logging:
+  level:
+    com:
+      boat:
+        provider: debug
+
+# feign调用的超时时间，优先级大于ribbon设置
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+  # 开启降级功能
+  sentinel:
+    enabled: true
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

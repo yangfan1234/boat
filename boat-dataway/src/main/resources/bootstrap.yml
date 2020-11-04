@@ -1,0 +1,15 @@
+spring:
+  application:
+    # 应用名称
+    name: boat-dataway
+  profiles:
+    active: @profile.active@
+  cloud:
+    nacos:
+      discovery:
+        # nacos注册中心-腾信云
+        server-addr: 150.158.152.127:8848
+      config:
+        # nacos配置中心-腾信云
+        server-addr: 150.158.152.127:8848
+        file-extension: yml

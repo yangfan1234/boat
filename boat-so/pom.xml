@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.boat</groupId>
+        <artifactId>boat-boot</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>boat-so</artifactId>
+    <name>boat-so</name>
+    <description>微服务1</description>
+
+    <dependencies>
+        <!--web层-->
+        <dependency>
+            <groupId>com.boat</groupId>
+            <artifactId>boat-common-web</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--持久层-->
+        <dependency>
+            <groupId>com.boat</groupId>
+            <artifactId>boat-mybatis</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--服务调用-->
+        <dependency>
+            <groupId>com.boat</groupId>
+            <artifactId>boat-provider</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.boat.so.BoatSoApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

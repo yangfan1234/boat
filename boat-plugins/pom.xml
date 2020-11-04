@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.boat</groupId>
+        <artifactId>boat-boot</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>boat-plugins</artifactId>
+    <name>boat-plugins</name>
+    <packaging>pom</packaging>
+    <description>项目公共组件管理</description>
+
+    <modules>
+        <module>boat-model</module>
+        <module>boat-common</module>
+        <module>boat-common-web</module>
+        <module>boat-mybatis</module>
+        <module>boat-provider</module>
+        <module>boat-generator</module>
+    </modules>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>
