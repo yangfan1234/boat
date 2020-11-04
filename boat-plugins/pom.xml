@@ -18,6 +18,7 @@
         <module>boat-common-web</module>
         <module>boat-mybatis</module>
         <module>boat-provider</module>
+        <module>boat-swagger</module>
         <module>boat-generator</module>
     </modules>
 
