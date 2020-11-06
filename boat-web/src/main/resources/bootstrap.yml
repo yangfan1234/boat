@@ -13,3 +13,6 @@ spring:
         # nacos配置中心-腾讯云
         server-addr: 150.158.152.127:8848
         file-extension: yml
+server:
+  servlet:
+    context-path: /web

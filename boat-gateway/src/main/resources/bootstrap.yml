@@ -1,0 +1,52 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: boat-gateway
+  profiles:
+    active: @profile.active@
+  cloud:
+    nacos:
+      discovery:
+        # nacos注册中心-腾信云
+        server-addr: 150.158.152.127:8848
+      config:
+        # nacos配置中心-腾讯云
+        server-addr: 150.158.152.127:8848
+        file-extension: yml
+    gateway:
+      enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allow-credentials: true # 允许携带认证信息
+            allowed-origins: "*" # 允许跨域的源
+      discovery:
+        locator:
+          #开启gateway从nacos上获取服务列表
+          enabled: false
+
+    # sentinel监控
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+
+      # 路由配置示例，需要关闭gateway.discovery.locator.enabled 否则直接请求微服务时，以下配置不起作用
+      # 生产中用动态路由
+#      routes:
+#        - id: boat-web
+#          uri: lb://boat-web
+#          predicates:
+#            - Before=2020-12-04T20:57:11.788+08:00[Asia/Shanghai]
+#            - Path=/web/**
+#            - Boat=上午7:00,下午11:00
+#          filters:
+#            - AddRequestParameter=boat,small
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        exclude: '*'

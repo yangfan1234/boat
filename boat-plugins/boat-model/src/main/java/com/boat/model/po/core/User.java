@@ -3,6 +3,7 @@ package com.boat.model.po.core;
 import java.time.LocalDateTime;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.boat.model.po.BasePo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -21,7 +22,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @ApiModel(value="User对象", description="用户表")
 @TableName("tb_user")
-public class User {
+public class User extends BasePo {
 
     @ApiModelProperty(value = "主键")
     private Long id;

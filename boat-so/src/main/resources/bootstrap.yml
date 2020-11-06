@@ -13,7 +13,7 @@ spring:
         # nacos配置中心-腾信云
         server-addr: 150.158.152.127:8848
         file-extension: yml
-    # sentinel监控--腾信云
+    # sentinel监控
     sentinel:
       transport:
         dashboard: 127.0.0.1:8080
